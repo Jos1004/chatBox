@@ -108,7 +108,7 @@
    }
   
     #m1{
-    font-size: 13px;
+    font-size: 10px;
     word-spacing: -1px;
     color: gray;
     font-weight: 600;
@@ -132,7 +132,7 @@
     width: 133px;
     border-radius: 0px 15px 15px 15px;
     transform: translateY(-20px);
-    font-size: 13px;
+    font-size: 10px;
     word-spacing: -1px;
     color: gray;
     font-weight: 600;
@@ -167,7 +167,7 @@
   
   h4{
     visibility:hidden;
-    color:#003049;	
+    color:#003049;
   }
   
   span:nth-child(1){
@@ -202,6 +202,7 @@
     0%{margin-top: -5px;}
   100%{margin-top: 0px;}
   }
+	  
   </style>
 </head>
 <body>
@@ -224,7 +225,6 @@
       <input type="text" id="inNome">
       <input type="submit" value="Send" onclick="ver()">
     </p>
-	
 	<h4>Lost Connection  <span>.</span><span>.</span><span>.</span></h4>
   </form>
  
@@ -232,12 +232,12 @@
   <script>
     const frm = document.querySelector("form")
     const res = document.querySelector("h5")
-	const res2 = document.querySelector("#m1")
+    const res2 = document.querySelector("#m1")
   
     frm.addEventListener("submit", (e)=>{
       const nome = frm.inNome.value
       res.innerText = nome 
-	      res2.innerText = `Nice to meet you ${ nome}`
+      res2.innerText = `Nice to meet you ${ nome}`
       e.preventDefault()
     })
 	
@@ -251,7 +251,7 @@
 	  if(nome.trim() === ""){
 	     visivel.style.visibility = "hidden";
 	     visivel1.style.visibility = "hidden";
-	       visivel2.style.visibility = "hidden";
+	     visivel2.style.visibility = "hidden";
 	  }
 	  else{
 	    setTimeout(function(){
@@ -271,17 +271,17 @@
 	}
   
   
-  function hidder(){
-   let hidde = document.querySelector(".quadro")
-   let visivel = document.getElementById("botao");
-	   let visivel1 = document.getElementById("m1");
-	   let visivel2 = document.querySelector("h4");
+        function hidder(){
+            let hidde = document.querySelector(".quadro")
+            let visivel = document.getElementById("botao");
+            let visivel1 = document.getElementById("m1");
+            let visivel2 = document.querySelector("h4");
     
-    hidde.style.visibility = "hidden"
-    visivel.style.visibility = "hidden";
-    visivel1.style.visibility = "hidden";
-    visivel2.style.visibility = "hidden";
-  }
+            hidde.style.visibility = "hidden"
+            visivel.style.visibility = "hidden";
+            visivel1.style.visibility = "hidden";
+            visivel2.style.visibility = "hidden";
+        }
 
   </script>
 </body>
