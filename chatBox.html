@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exemplo 2.1</title>
+  
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
+  
+     body{
+       align-items: center;
+       justify-content: center;
+       display: flex;
+       flex-direction: column;
+       background-color: #264653;
+       z-index = 0;
+     }
+     
+    .titulo{
+      height: 33px;
+      padding: 0px;
+      background-color: #BC6C25;
+      margin: 0px;
+      margin-left: -30px;
+      width: 263.4px;
+      transform: translateY(-5px);
+      border-radius: 10px 10px 0px 0px;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      text-indent: 20px;
+      font-size: 20px;
+      font-weight: 400;
+      color: white;
+      font-family: courier;
+    }
+   
+    .quadro{
+      margin-top: 400px;
+      border: 2px solid vanilla;
+      padding: 30px;
+      padding-top: 5px;
+      padding-bottom: 40px;
+      border-radius: 10px;
+      box-shadow: 10px 10px black;
+      background: #e9c46a;
+      position: fixed;
+      width: 203px;
+      visibility: visible;
+    }
+    
+    h1{
+      transform: translateY(-90px);
+      font-family: "Fascinate Inline", system-ui;
+      font-weight:400;
+      color: darkteal;
+    }
+  
+    p{
+      transform: translateY(70px);
+    }
+  
+    #inNome{
+      border-radius: 30px;
+      border:none;
+      width: 149.5px;
+      height:23px;
+      
+    }
+  
+    input:nth-child(2){
+      border-radius: 5px;
+      border: none;
+	  cursor: pointer;
+      padding: 5px;
+      box-shadow: 3.5px 3.5px black;
+      color: white;
+      background: #bc6c25;
+	  font-size:12px;
+      font-weight: 600;
+    }
+  
+    input:nth-child(2):active{
+      background-color: #7777;
+      transform: scale(0.9);
+      transition: transform 0.5s; 
+    }
+	
+    input:nth-child(2):hover{
+      background-color: #7777;
+      transition: transform 0.5s; 
+    }
+  
+   #botao{
+      margin-left: 120px;
+	  color: #005f73;
+	  border: 0.5px solid #005f73;
+	  height: 45px;
+      width: 100px;
+	  background: #83c5be;
+	  text-align: center;
+	  display: flex;
+      align-items: center;
+	  border-radius: 15px 0px 15px 15px;
+	  text-indent: 15px;
+	  visibility: hidden;
+   }
+  
+    #m1{
+	font-size: 13px;
+	word-spacing: -1px;
+    color: gray;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    text-indent: 6px;
+    text-align: justify;
+    border: 0.5px solid gray;
+	background-color: white;
+    height: 45px;
+    width: 133px;
+    border-radius: 0px 15px 15px 15px;
+	align-items: center;
+	visibility: hidden;
+	}
+  
+  
+  .box1{
+    background-color: white;
+    height: 45px;
+    width: 133px;
+    border-radius: 0px 15px 15px 15px;
+    transform: translateY(-20px);
+    font-size: 13px;
+	word-spacing: -1px;
+    color: gray;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    text-indent: 6px;
+    text-align: justify;
+    border: 0.5px solid gray;
+  }
+  
+  #sair{
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    margin: 0;
+	margin-left: 195px;
+	margin-top: -10px;
+    padding: 0;
+    font-size: 17px;
+    box-shadow: none;
+    background: none;
+    font-family: monospace;
+    font-weight: 1000;
+  }
+  
+  #sair:hover{
+    cursor: pointer;
+    color: #111;
+	font-weight: 400;
+	transform: scale(0.9);
+  }
+  
+  h4{
+    visibility:hidden;
+	color:#003049;
+	
+  }
+  
+  span:nth-child(1){
+    text-indent: 10px;
+    position: absolute;
+    animation: movimento;
+   	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-delay: 8.7s;
+  }
+  span:nth-child(2){
+    text-indent: 5px;
+    position: absolute;
+	animation: movimento;
+  	animation-duration: 1.5s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-delay: 7s;
+  }
+  span:nth-child(3){
+    position: absolute;
+	animation: movimento;
+  	animation-duration: 1.5s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-delay: 6.5s;
+
+  }
+  
+  @keyframes movimento{
+    0%{margin-top: -5px;}
+	100%{margin-top: 0px;}
+  }
+  </style>
+</head>
+<body>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <div class="quadro">
+  <div class="titulo">Menssage</div>
+   <input type="button" id="sair" value="X" onclick="hidder()">
+  <h1 align="center">Chat-Box</h1>
+  <form>
+    <div class="box1">Hi! What's your name?</div>
+     <h5 id="botao"></h5>
+     <h5 id="m1"></h5>
+    <p>
+      <input type="text" id="inNome">
+      <input type="submit" value="Send" onclick="ver()">
+    </p>
+	
+	<h4>Lost Connection  <span>.</span><span>.</span><span>.</span></h4>
+  </form>
+ 
+ </div>
+  <script>
+    const frm = document.querySelector("form")
+    const res = document.querySelector("h5")
+	const res2 = document.querySelector("#m1")
+  
+    frm.addEventListener("submit", (e)=>{
+      const nome = frm.inNome.value
+      res.innerText = nome 
+	      res2.innerText = `Nice to meet you ${ nome}`
+      e.preventDefault()
+    })
+	
+	function ver(){
+	 let visivel = document.getElementById("botao");
+	 let visivel1 = document.getElementById("m1");
+	 let visivel2 = document.querySelector("h4");
+	 let nome = document.getElementById("inNome").value;
+	  
+	  
+	  if(nome.trim() === ""){
+	     visivel.style.visibility = "hidden";
+	     visivel1.style.visibility = "hidden";
+	       visivel2.style.visibility = "hidden";
+	  }
+	  else{
+	    setTimeout(function(){
+	    visivel.style.visibility = "visible";
+	    }, 0700)
+	    
+	    setTimeout(function(){
+	     visivel1.style.visibility = "visible";
+	    }, 2000)
+	      
+	     setTimeout(function(){
+	    visivel2.style.visibility = "visible";
+	  }, 2090)
+	    
+	    document.getElementById("inNome").disabled = true;
+	  }
+	}
+  
+  
+  function hidder(){
+   let hidde = document.querySelector(".quadro")
+   let visivel = document.getElementById("botao");
+	   let visivel1 = document.getElementById("m1");
+	   let visivel2 = document.querySelector("h4");
+    
+    hidde.style.visibility = "hidden"
+    visivel.style.visibility = "hidden";
+    visivel1.style.visibility = "hidden";
+    visivel2.style.visibility = "hidden";
+  }
+
+  </script>
+</body>
+</html>
